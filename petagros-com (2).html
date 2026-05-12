@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petagros-Com | PET Preform Manufacturer — Moldova</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0b1f3a;
+    --navy-mid: #142d50;
+    --blue: #1a5fa8;
+    --blue-light: #2a7bc8;
+    --accent: #2e8b57;
+    --accent-light: #3aad6e;
+    --white: #ffffff;
+    --offwhite: #f7f5f0;
+    --gray-light: #eceae4;
+    --gray-mid: #a9a79f;
+    --gray-dark: #4a4845;
+    --text: #1c1b19;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(11,31,58,0.97);
+    backdrop-filter: blur(8px);
+    padding: 0 5%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: var(--white);
+    letter-spacing: 0.01em;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--accent); }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+  }
+  nav ul a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  nav ul a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    padding: 80px 5% 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-lines {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+  }
+
+  .hero-content {
+    max-width: 680px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 1.05;
+    color: var(--white);
+    margin-bottom: 28px;
+    letter-spacing: -0.01em;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.6);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--accent-light); transform: translateY(-1px); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* HERO STATS */
+  .hero-stats {
+    position: absolute;
+    right: 5%;
+    bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 2;
+  }
+  .stat-block {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 20px 28px;
+    border-radius: 2px;
+    min-width: 200px;
+  }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+
+  /* SECTIONS */
+  section { padding: 96px 5%; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.1;
+    color: var(--navy);
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  .section-lead {
+    font-size: 17px;
+    color: var(--gray-dark);
+    max-width: 560px;
+    line-height: 1.75;
+  }
+
+  /* ABOUT */
+  #about { background: var(--offwhite); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    margin-top: 56px;
+  }
+
+  .about-text p {
+    font-size: 16px;
+    color: var(--gray-dark);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .about-milestones {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .milestone {
+    display: flex;
+    gap: 24px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--gray-light);
+    position: relative;
+  }
+  .milestone:last-child { border-bottom: none; }
+
+  .milestone-year {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--accent);
+    min-width: 56px;
+    line-height: 1.3;
+  }
+
+  .milestone-text {
+    font-size: 15px;
+    color: var(--gray-dark);
+    line-height: 1.6;
+  }
+  .milestone-text strong {
+    display: block;
+    color: var(--navy);
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  /* PRODUCTS */
+  #products { background: var(--white); }
+
+  .products-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 56px;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--gray-light);
+  }
+
+  .product-card {
+    background: var(--white);
+    padding: 40px 32px;
+    position: relative;
+    transition: background 0.2s;
+  }
+  .product-card:hover { background: var(--offwhite); }
+
+  .product-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--navy);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  .product-icon svg { width: 24px; height: 24px; fill: var(--accent); }
+
+  .product-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--navy);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .product-card p {
+    font-size: 15px;
+    color: var(--gray-dark);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .product-specs {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .spec-row:last-child { border-bottom: none; }
+  .spec-key { color: var(--gray-mid); font-weight: 500; }
+  .spec-val { color: var(--navy); font-weight: 600; }
+
+  /* CAPACITY */
+  #capacity { background: var(--navy); }
+
+  #capacity .section-title { color: var(--white); }
+  #capacity .section-lead { color: rgba(255,255,255,0.55); }
+
+  .capacity-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: rgba(255,255,255,0.06);
+    margin-top: 56px;
+  }
+
+  .cap-card {
+    background: var(--navy);
+    padding: 40px 28px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .cap-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 44px;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .cap-unit {
+    font-size: 14px;
+    color: rgba(255,255,255,0.4);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  .cap-desc {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+  }
+
+  /* CLIENTS */
+  #clients { background: var(--offwhite); }
+
+  .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--gray-light);
+    margin-top: 56px;
+  }
+
+  .client-card {
+    background: var(--offwhite);
+    padding: 36px 32px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .client-icon-wrap {
+    width: 44px;
+    height: 44px;
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .client-icon-wrap svg { width: 20px; height: 20px; fill: var(--blue); }
+
+  .client-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .client-card p {
+    font-size: 14px;
+    color: var(--gray-dark);
+    line-height: 1.6;
+  }
+
+  /* CONTACT */
+  #contact { background: var(--white); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 56px;
+    align-items: start;
+  }
+
+  .contact-info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .contact-item-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--navy);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-item-icon svg { width: 18px; height: 18px; fill: var(--accent); }
+
+  .contact-item-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+    margin-bottom: 4px;
+  }
+  .contact-item-value {
+    font-size: 16px;
+    color: var(--navy);
+    font-weight: 500;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select {
+    width: 100%;
+    background: var(--offwhite);
+    border: 1px solid var(--gray-light);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    padding: 14px 16px;
+    border-radius: 2px;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: none;
+  }
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder { color: var(--gray-mid); }
+  .contact-form input:focus,
+  .contact-form textarea:focus { border-color: var(--blue); }
+  .contact-form textarea { min-height: 120px; }
+
+  .form-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.2s;
+    align-self: flex-start;
+  }
+  .form-submit:hover { background: var(--blue); }
+
+  /* FOOTER */
+  footer {
+    background: #07142a;
+    color: rgba(255,255,255,0.4);
+    padding: 40px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 13px;
+  }
+
+  .footer-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .footer-logo span { color: var(--accent); }
+
+  /* HERO PHOTO */
+  .hero-visual {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 48%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .hero-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.55;
+    filter: saturate(0.85) brightness(0.65);
+    display: block;
+  }
+  .hero-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--navy) 0%, transparent 35%);
+    z-index: 1;
+  }
+  .hero-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--navy) 0%, transparent 30%);
+    z-index: 1;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-content > * {
+    animation: fadeUp 0.7s ease both;
+  }
+  .hero-eyebrow { animation-delay: 0.1s; }
+  .hero h1 { animation-delay: 0.2s; }
+  .hero-sub { animation-delay: 0.3s; }
+  .hero-ctas { animation-delay: 0.4s; }
+
+  @media (max-width: 900px) {
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .product-grid, .clients-grid { grid-template-columns: 1fr; }
+    .capacity-grid { grid-template-columns: 1fr 1fr; }
+    .hero-stats { position: static; flex-direction: row; flex-wrap: wrap; margin-top: 48px; }
+    .hero { flex-direction: column; justify-content: flex-start; }
+    .hero-visual { display: none; }
+    nav ul { gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    Petagros<span>·</span>Com
+  </a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#capacity">Capacity</a></li>
+    <li><a href="#clients">Industries</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+  <!-- Background pattern -->
+  <svg class="hero-bg-lines" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+        <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" stroke-width="0.5"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#grid)"/>
+  </svg>
+
+  <!-- Hero photo: real PET preforms -->
+  <div class="hero-visual">
+    <img src="1778602099440_image.png" 
+         alt="PET Preforms manufacturing">
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">Moldova's Premier PET Preform Manufacturer</div>
+    <h1>Precision<br><em>Preforms</em><br>at Scale</h1>
+    <p class="hero-sub">
+      Petagros-Com supplies high-quality PET preforms to beverage, beer, and spirits producers across the region — with over 300 million units of annual production capacity.
+    </p>
+    <div class="hero-ctas">
+      <a href="#products" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Our Products
+      </a>
+      <a href="#contact" class="btn-ghost">Get in Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-block">
+      <div class="stat-num">300M+</div>
+      <div class="stat-label">Preforms / year</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">20+</div>
+      <div class="stat-label">Years of operation</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">$2M+</div>
+      <div class="stat-label">Capital invested</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">Who We Are</div>
+  <h2 class="section-title">Moldova's leading<br>PET preform enterprise</h2>
+
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        Petagros-Com S.R.L. is a Moldovan company specialising exclusively in the production of PET preforms — the foundational component of plastic packaging for the beverage and food industries.
+      </p>
+      <p>
+        In 2002, we built the first modern PET preform manufacturing facility in Moldova. Since then, we have grown into the country's leading producer, investing continuously in capacity, quality, and technology.
+      </p>
+      <p>
+        Headquartered in Ungheni, Moldova, our facility operates with advanced injection moulding lines and serves clients across the beverage, brewing, and spirits sectors.
+      </p>
+      <p>
+        Our investment program — exceeding $2 million USD — has expanded annual production from 156 million to 300 million preforms, with a development roadmap targeting 600 million units per year.
+      </p>
+    </div>
+
+    <div class="about-milestones">
+      <div class="milestone">
+        <div class="milestone-year">2002</div>
+        <div class="milestone-text">
+          <strong>Moldova's First Modern Preform Factory</strong>
+          Company founded and first-of-its-kind PET preform plant constructed in Ungheni.
+        </div>
+      </div>
+      <div class="milestone">
+        <div class="milestone-year">2004</div>
+        <div class="milestone-text">
+          <strong>First Capacity Expansion</strong>
+          Production reaches 156 million preforms per year; investment project for second line initiated.
+        </div>
+      </div>
+      <div class="milestone">
+        <div class="milestone-year">2005</div>
+        <div class="milestone-text">
+          <strong>Second Line Launch</strong>
+          Second production line commissioned in December, doubling output to 300 million preforms per year.
+        </div>
+      </div>
+      <div class="milestone">
+        <div class="milestone-year">2006</div>
+        <div class="milestone-text">
+          <strong>Roadmap: 600M Units</strong>
+          Plans filed for two additional production lines, targeting 600 million preforms annually.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="products-intro">
+    <div>
+      <div class="section-label">What We Make</div>
+      <h2 class="section-title">PET Preforms<br>built for performance</h2>
+    </div>
+    <p class="section-lead">
+      Our preforms are engineered for consistent wall thickness, clarity, and compatibility with high-speed blow moulding equipment.
+    </p>
+  </div>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <div class="product-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 2h6l1 4H8L9 2zm-1 4v2c0 5 4 10 4 10s4-5 4-10V6H8z"/></svg>
+      </div>
+      <h3>Beverage Preforms</h3>
+      <p>Designed for still and sparkling water, carbonated soft drinks, juices, and functional drinks. Available in a range of neck finishes and gram weights.</p>
+      <div class="product-specs">
+        <div class="spec-row"><span class="spec-key">Neck finish</span><span class="spec-val">PCO 1881 / PCO 28mm</span></div>
+        <div class="spec-row"><span class="spec-key">Weight range</span><span class="spec-val">12 g – 58 g</span></div>
+        <div class="spec-row"><span class="spec-key">Volume</span><span class="spec-val">0.25 L – 5 L</span></div>
+        <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">Virgin PET resin</span></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-icon">
+        <svg viewBox="0 0 24 24"><path d="M7 2h10v3l1 1v13a2 2 0 01-2 2H8a2 2 0 01-2-2V6l1-1V2zm2 1v2h6V3H9zm-2 4v12h10V7H7z"/></svg>
+      </div>
+      <h3>Beer & Brewery Preforms</h3>
+      <p>High-barrier PET preforms suitable for beer packaging, engineered to withstand carbonation pressure and maintain flavour integrity over extended shelf life.</p>
+      <div class="product-specs">
+        <div class="spec-row"><span class="spec-key">Neck finish</span><span class="spec-val">BPF 38mm / Crown</span></div>
+        <div class="spec-row"><span class="spec-key">Weight range</span><span class="spec-val">28 g – 65 g</span></div>
+        <div class="spec-row"><span class="spec-key">Volume</span><span class="spec-val">0.5 L – 2 L</span></div>
+        <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">High-IV PET</span></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2c-1 0-3 .8-3 3v1H7v2h1l1 13h6l1-13h1V6h-2V5c0-2.2-2-3-3-3zm0 2c.6 0 1 .3 1 1v1h-2V5c0-.7.4-1 1-1z"/></svg>
+      </div>
+      <h3>Spirits & Wine Preforms</h3>
+      <p>Premium preforms for alcoholic beverage producers, including wine, spirits, and liqueurs. Optimised for clarity and chemical resistance.</p>
+      <div class="product-specs">
+        <div class="spec-row"><span class="spec-key">Neck finish</span><span class="spec-val">30/25 short / 28mm</span></div>
+        <div class="spec-row"><span class="spec-key">Weight range</span><span class="spec-val">34 g – 80 g</span></div>
+        <div class="spec-row"><span class="spec-key">Volume</span><span class="spec-val">0.5 L – 1.75 L</span></div>
+        <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">Crystal-clear PET</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPACITY -->
+<section id="capacity">
+  <div class="section-label">Production Scale</div>
+  <h2 class="section-title" style="color:white">Manufacturing<br>capacity at a glance</h2>
+  <p class="section-lead">
+    Our phased investment plan positions Petagros-Com to serve growing regional demand with consistent, on-time delivery.
+  </p>
+
+  <div class="capacity-grid">
+    <div class="cap-card">
+      <div class="cap-num">156M</div>
+      <div class="cap-unit">preforms / year</div>
+      <div class="cap-desc">Initial production capacity at founding — the first of its kind in Moldova.</div>
+    </div>
+    <div class="cap-card">
+      <div class="cap-num">300M</div>
+      <div class="cap-unit">preforms / year</div>
+      <div class="cap-desc">Current capacity after commissioning the second production line.</div>
+    </div>
+    <div class="cap-card">
+      <div class="cap-num">600M</div>
+      <div class="cap-unit">preforms / year</div>
+      <div class="cap-desc">Target capacity with two additional lines planned for installation.</div>
+    </div>
+    <div class="cap-card">
+      <div class="cap-num">$2M+</div>
+      <div class="cap-unit">total investment</div>
+      <div class="cap-desc">Capital deployed in facility expansion, equipment, and infrastructure upgrades.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients">
+  <div class="section-label">Industries Served</div>
+  <h2 class="section-title">Who relies<br>on our preforms</h2>
+  <p class="section-lead">
+    We supply Moldova's most demanding producers of packaged beverages, brewing, and distilled products.
+  </p>
+
+  <div class="clients-grid">
+    <div class="client-card">
+      <div class="client-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M12 3C9 3 6 5 6 9v1H4v11h16V10h-2V9c0-4-3-6-6-6zm0 2c2.2 0 4 1.3 4 4v1H8V9c0-2.7 1.8-4 4-4z"/></svg>
+      </div>
+      <div>
+        <h3>Soft Drink & Water Producers</h3>
+        <p>We supply preforms for still water, sparkling water, carbonated soft drinks, and juice packaging at all commercial scales.</p>
+      </div>
+    </div>
+
+    <div class="client-card">
+      <div class="client-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M7 2h10v3l1 1v13a2 2 0 01-2 2H8a2 2 0 01-2-2V6l1-1V2zm2 1v2h6V3H9z"/></svg>
+      </div>
+      <div>
+        <h3>Breweries</h3>
+        <p>Pressure-rated, high-IV PET preforms engineered to protect carbonation and preserve taste in beer bottles of all sizes.</p>
+      </div>
+    </div>
+
+    <div class="client-card">
+      <div class="client-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M12 2c-1 0-3 .8-3 3v1H7v2h1l1 13h6l1-13h1V6h-2V5c0-2.2-2-3-3-3z"/></svg>
+      </div>
+      <div>
+        <h3>Spirits & Wine Distillers</h3>
+        <p>Crystal-clear preforms with chemical resistance and aesthetic clarity, purpose-built for premium alcoholic beverages.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Get in Touch</div>
+  <h2 class="section-title">Request a quote<br>or product sample</h2>
+
+  <div class="contact-grid">
+    <div class="contact-info-block">
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/></svg>
+        </div>
+        <div>
+          <div class="contact-item-label">Address</div>
+          <div class="contact-item-value">MD-3601, Ungheni, mun. Ungheni<br>Ghenadie Crestiuc 11, ap. 5<br>Republic of Moldova</div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1A19.5 19.5 0 013.1 10.7 19.8 19.8 0 01.1 2.2 2 2 0 012.1 0h3a2 2 0 012 1.7 12.8 12.8 0 00.7 2.8 2 2 0 01-.45 2.1L6.1 7.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.45 12.8 12.8 0 002.8.7A2 2 0 0122 14.9z"/></svg>
+        </div>
+        <div>
+          <div class="contact-item-label">Phone</div>
+          <div class="contact-item-value">+373 (236) — request via form</div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm8 7L4 6v1l8 5 8-5V6l-8 5z"/></svg>
+        </div>
+        <div>
+          <div class="contact-item-label">Email</div>
+          <div class="contact-item-value">info@petagros.md</div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14.9V17h-2v-.1A5 5 0 017.1 12H7v-2h.1A5 5 0 0112 5.1V5h2v.1A5 5 0 0116.9 10H17v2h-.1A5 5 0 0113 16.9z"/></svg>
+        </div>
+        <div>
+          <div class="contact-item-label">Registration</div>
+          <div class="contact-item-value">IDNO: 1003609000087<br>S.R.L. Petagros-Com</div>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <input type="text" placeholder="First name" required>
+        <input type="text" placeholder="Last name" required>
+      </div>
+      <input type="email" placeholder="Business email" required>
+      <input type="text" placeholder="Company name">
+      <select>
+        <option value="" disabled selected>Product interest</option>
+        <option>Beverage Preforms</option>
+        <option>Beer / Brewery Preforms</option>
+        <option>Spirits & Wine Preforms</option>
+        <option>General Inquiry</option>
+      </select>
+      <textarea placeholder="Tell us about your requirements — volumes, neck finish, gram weight, delivery location…"></textarea>
+      <button type="submit" class="form-submit">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+        Send Enquiry
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="footer-logo">Petagros<span>·</span>Com</a>
+  <span>© 2025 S.R.L. Petagros-Com, Ungheni, Republic of Moldova</span>
+  <span>IDNO 1003609000087</span>
+</footer>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = '✓ Message Sent';
+    btn.style.background = '#1a5fa8';
+    setTimeout(() => {
+      btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg> Send Enquiry';
+      btn.style.background = '';
+      e.target.reset();
+    }, 3000);
+  }
+
+  // Smooth active nav
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav ul a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => {
+          a.style.color = a.getAttribute('href') === '#' + e.target.id
+            ? 'var(--accent-light)'
+            : '';
+        });
+      }
+    });
+  }, { threshold: 0.35 });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
